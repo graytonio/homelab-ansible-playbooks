@@ -3,6 +3,7 @@
   serial: 1
   tasks:
     - name: Ugrade apt packages
+      become: true
       ansible.builtin.apt:
         update_cache: yes
         upgrade: yes
@@ -13,6 +14,7 @@
       register: reboot_required_file
 
     - name: Reboot if required
+      become: true
       reboot:
       when: reboot_required_file.stat.exists == true
 
