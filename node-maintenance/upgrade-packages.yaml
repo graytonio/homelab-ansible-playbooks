@@ -3,7 +3,7 @@
   serial: 1
   tasks:
     - name: Ugrade apt packages
-      ansible.buitin.apt:
+      ansible.builtin.apt:
         update_cache: yes
         upgrade: yes
 
